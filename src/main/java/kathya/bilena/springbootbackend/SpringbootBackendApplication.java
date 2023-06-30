@@ -21,7 +21,7 @@ public class SpringbootBackendApplication extends Thread implements CommandLineR
 
 	@GetMapping("/MostrarDatos")
 	public String getMessage() {
-		String mensaje = "";
+		String mensaje = "|| ";
 		for (int i = 0; i < usuarioController.getAllUsuarios().size(); i++){
 			String nombre = usuarioController.getAllUsuarios().get(i).getNombre();
 			String espacio = "          ";
@@ -37,7 +37,7 @@ public class SpringbootBackendApplication extends Thread implements CommandLineR
 					espacioCorreo += " ";
 				}
 			}
-			mensaje += nombre + espacio + correo + espacioCorreo + usuarioController.getAllUsuarios().get(i).getEmpleo() + "\n";
+			mensaje += "Nombre: " + nombre + espacio + " Correo: " + correo + espacioCorreo + " Empleo: " + usuarioController.getAllUsuarios().get(i).getEmpleo() + " || ";
 		}
 		return mensaje;
 	}
