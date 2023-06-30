@@ -37,7 +37,11 @@ public class SpringbootBackendApplication extends Thread implements CommandLineR
 			System.out.println("3. Salir");
 			Scanner entrada = new Scanner(System.in);
 			System.out.printf("Ingrese la opción que desea ejecutar: ");
-			opcion = entrada.nextInt();
+			try {
+				opcion = entrada.nextInt();
+			}catch (Exception e) {
+				System.exit(0);
+			}
 			if (opcion == 1) {
 				System.out.println("------------------------------------------------------------------------------------------------------");
 				System.out.println("                                             CARGAR DATOS");
